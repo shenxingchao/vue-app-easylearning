@@ -44,7 +44,17 @@
         </div>
         <div class="course">
           <div class="item" v-for="(item, index) in hotRecommend" :key="index">
-            <div class="img-box">
+            <div
+              class="img-box"
+              @click="
+                $router.push({
+                  path: '/Course/CourseDetail/' + item.id,
+                  query: {
+                    title: item.title
+                  }
+                })
+              "
+            >
               <img v-lazy="item.image" />
               <div class="price" v-if="item.price == 0">免费</div>
               <div class="price" v-else>￥{{ item.price }}</div>
@@ -200,6 +210,7 @@ export default {
       getHotCourseLsts({})
         .then(res => {
           this.hotRecommend = res.data.data
+          console.log(this.hotRecommend)
         })
         .catch(() => {})
     },
@@ -224,6 +235,8 @@ export default {
 .swiper-pagination {
   bottom: 0.3rem !important;
   .swiper-pagination-bullet {
+    width: 0.3rem;
+    height: 0.3rem;
     background: #ffffff;
     border: 1px solid @theme;
   }

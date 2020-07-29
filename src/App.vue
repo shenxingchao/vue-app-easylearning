@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted() {
-    // this.$store.commit('updateShowLoading', false)
+    this.$store.commit('updateShowLoading', false)
   },
   computed: {
     showLoading() {
@@ -117,7 +117,7 @@ export default {
         this.$store.commit('updateShowTabbar', false)
       }
       //定义不需要头部的组件Name （注意：可在页面内再次调用Header组件自定义插槽）
-      let hideHeaderUrl = ['Home', 'UserIndex']
+      let hideHeaderUrl = ['Home', 'UserIndex', 'CourseDetail']
       if (hideHeaderUrl.indexOf(to.name) !== -1) {
         this.$store.commit('updateShowHeader', false)
       } else {
