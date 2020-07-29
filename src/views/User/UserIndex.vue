@@ -93,7 +93,6 @@ export default {
       getUserInfoData({})
         .then(res => {
           this.user_info = res.data.data
-          console.log(this.user_info)
         })
         .catch(() => {})
     }

@@ -5,6 +5,7 @@ const Mock = require('mockjs')
 let hot_course = Mock.mock({
   'data|4': [
     {
+      'id|+1': 1,
       image: '@dataImage("280x170","280x170占位图")', //生成随机图片，大小/背景色/字体颜色/文字信息
       'price|0-1000': 20, //生成1-1000的随机数
       title: '@ctitle(6,14)', //生成中文标题

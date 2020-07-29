@@ -30,6 +30,14 @@ const RouterCopy = new VueRouter({
           component: resolve =>
             require(['@/views/Course/CourseIndex'], resolve),
           meta: { requireAuth: false, index: 1 }
+        },
+        {
+          //课程详情
+          path: 'CourseDetail/:id',
+          name: 'CourseDetail',
+          component: resolve =>
+            require(['@/views/Course/CourseDetail'], resolve),
+          meta: { requireAuth: false, index: 2 }
         }
       ]
     },
